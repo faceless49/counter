@@ -16,20 +16,18 @@ const Counter = (props: CounterPropsType) => {
     <div className={s.counter}>
       <h1 className={s.title}>Click Counter</h1>
       <div className={s.counter_wrapper}>
-        <span className={s.value}>
+        <span className={s.value + ` ${props.counterValue === 5 ? s.maxvalue : ''}`}>
           {props.counterValue}
         </span>
         <div className={s.button_wrapper}>
           <Button
             title={'inc'}
-            callBack={() => props.incValue()}
+            callBack={props.incValue}
             disableBtn={props.counterValue === 5}
-
-
           />
           <Button
             title={'reset'}
-            callBack={() => props.resetValue()}
+            callBack={props.resetValue}
             disableBtn={props.counterValue === 0}
           />
         </div>

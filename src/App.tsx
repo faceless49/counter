@@ -16,8 +16,7 @@ function App() {
   }
 
   const resetValue = () => {
-    counterValue = 0
-    setCounterValue(counterValue)
+    setCounterValue(0)
     console.log('bye')
   }
 

@@ -13,7 +13,7 @@ const Button = (props: ButtonPropsType) => {
   return (
     <button disabled={props.disableBtn}
             className={s.button}
-            onClick={() => props.callBack()}><span>{props.title}</span></button>
+            onClick={props.callBack}><span>{props.title}</span></button>
   )
 
 };
