@@ -1,11 +1,17 @@
 .counter {
-  padding: 50px;
-  border: 5px solid black;
+  padding: 20px 50px;
+  border-radius: 25px;
+  border: 5px solid #fff;
+  display: flex;
+  flex-direction: column;
+  background-color: #bf5dfe;
+
 
   .title {
     margin: 0;
-    font-size: 25px;
+    font-size: 35px;
     text-align: center;
+    flex: 1 1 auto;
   }
 
   .counter_wrapper {
@@ -13,12 +19,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    .button_wrapper {
+      margin-top: 15px;
+    }
     .value {
-      font-size: 70px;
+      font-size: 60px;
     }
     .maxvalue {
-      color: #8a5d98;
+      color: #ff5d94;
     }
   }
 }
