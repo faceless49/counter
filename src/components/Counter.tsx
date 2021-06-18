@@ -11,23 +11,26 @@ export type CounterPropsType = {
 
 const Counter = (props: CounterPropsType) => {
 
+
+  const [value, incValue, resetValue] = [props.counterValue, props.incValue, props.resetValue]
+
   return (
     <div className={s.counter}>
       <h1 className={s.title}>Click Counter</h1>
       <div className={s.counter_wrapper}>
-        <span className={s.value + ` ${props.counterValue === 5 ? s.maxvalue : ''}`}>
-          {props.counterValue}
+        <span className={s.value + ` ${value === 5 ? s.maxvalue : ''}`}>
+          {value}
         </span>
         <div className={s.button_wrapper}>
           <Button
             title={'inc'}
-            callBack={props.incValue}
-            disableBtn={props.counterValue === 5}
+            callBack={incValue}
+            disableBtn={value === 5}
           />
           <Button
             title={'reset'}
-            callBack={props.resetValue}
-            disableBtn={props.counterValue === 0}
+            callBack={resetValue}
+            disableBtn={value === 0}
           />
         </div>
       </div>
