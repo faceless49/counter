@@ -11,7 +11,6 @@ export type CounterPropsType = {
 
 const Counter = (props: CounterPropsType) => {
 
-
   return (
     <div className={s.counter}>
       <h1 className={s.title}>Click Counter</h1>

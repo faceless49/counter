@@ -7,7 +7,6 @@ type ButtonPropsType = {
   disableBtn: boolean
 }
 
-
 const Button = (props: ButtonPropsType) => {
 
   return (

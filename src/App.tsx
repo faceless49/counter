@@ -9,7 +9,7 @@ function App() {
 
   let [counterValue, setCounterValue] = useState<CounterValueType>(0)
 
-  const incValue =  () => {
+  const incValue = () => {
     let value = ++counterValue
     setCounterValue(value)
     console.log('hello')
