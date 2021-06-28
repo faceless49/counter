@@ -7,7 +7,7 @@ export type ButtonPropsType = {
   disableBtn?: boolean
 }
 
-const Button = (props: ButtonPropsType) => {
+export const Button = (props: ButtonPropsType) => {
 
 
   return (
@@ -20,4 +20,3 @@ const Button = (props: ButtonPropsType) => {
 
 };
 
-export default Button;

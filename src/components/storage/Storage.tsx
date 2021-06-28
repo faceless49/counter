@@ -1,5 +1,5 @@
 import s from './Storage.module.scss'
-import Button from '../../ui/button/Button';
+import {Button} from '../../ui/button/Button';
 
 
 type StoragePropsType = {
