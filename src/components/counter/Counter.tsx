@@ -1,6 +1,6 @@
 import s from './Counter.module.scss'
-import {CounterValueType} from '../App';
-import Button from '../ui/button/Button';
+import {CounterValueType} from '../../App';
+import Button from '../../ui/button/Button';
 
 export type CounterPropsType = {
   counterValue: CounterValueType
