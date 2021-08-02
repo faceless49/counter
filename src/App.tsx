@@ -13,37 +13,41 @@ function App() {
   let [counterValue, setCounterValue] = useState<CounterValueType>(START_VALUE)
 
   const incValue = () => {
-    let value = ++counterValue
-    setCounterValue(value)
+    setCounterValue(counterValue + 1)
+    localStorage.setItem('counterValue', JSON.stringify(counterValue))
   }
 
   const resetValue = () => {
     setCounterValue(0)
   }
+  const getFromLocalStorageHandler = () => {
+    let valueAsString = localStorage.getItem('counterValue')
+    if (valueAsString) {
+      let numValue = JSON.parse(valueAsString)
+      setCounterValue(numValue)
+    }
+  };
+
+
+  useEffect(() => {
+    localStorage.setItem('counterValue', JSON.stringify(counterValue))
+  }, [counterValue])
 
   useEffect(() => {
     getFromLocalStorageHandler()
-  }, [])
-  useEffect(() => {
-    setToLocalStorageHandler()
-  }, [counterValue])
+  }, []) // Run at once on start for getting local storage value
 
-  const setToLocalStorageHandler = () => {
-    localStorage.setItem('counterKey', JSON.stringify(counterValue))
+  const clearLocalStorageHandler = () => {
+    localStorage.clear()
+    setCounterValue(0)
   }
-  const getFromLocalStorageHandler = () => {
-    let valueAsString = localStorage.getItem('counterKey')
-    if (valueAsString) {
-      let newValue = JSON.parse(valueAsString)
-      setCounterValue(newValue)
-    }
+  const removeItemLocalStorageHandler = () => {
+    localStorage.removeItem('counterValue + 1')
   }
-
 
   return (
     <div className={s.App}>
       <Storage
-        setToLocalStorageHandler={setToLocalStorageHandler}
       />
       <Counter
         counterValue={counterValue}

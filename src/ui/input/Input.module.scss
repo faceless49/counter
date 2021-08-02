@@ -1,0 +1,11 @@
+.form {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  &_label {
+    text-align: center;
+  }
+  &_input {
+    padding: 5px;
+  }
+}
