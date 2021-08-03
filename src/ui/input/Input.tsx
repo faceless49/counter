@@ -6,34 +6,22 @@ type InputPropsType = {
   htmlForm: string
   title: string
   type: string
+  value: number
+  callback: (e: any) => void
 }
-
-
 
 
 export const Input = (props: InputPropsType) => {
 
-  let [title, setTitle] = useState('')
+  let [value, setValue] = useState(12)
 
-  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.currentTarget.value)
-  }
-  // const onClickHandler = () => {
-  //   if (title => 0) {
-  //     props.callBack(title.trim())
-  //     setTitle('')
-  //     setError(null)
-  //   } else {
-  //     setError('Title is required')
-  //   }
-  // }
+
   return <form className={s.form}>
     <label className={s.form_label} htmlFor={props.htmlForm}>
       {props.title}
     </label>
     <input className={s.form_input} type={props.type}
-      id={props.id} onChange={onChangeHandler}/>
-
+      id={props.id} onChange={props.callback} value={props.value}/>
   </form>
 };
 

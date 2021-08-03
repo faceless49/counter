@@ -5,6 +5,8 @@ export type ButtonPropsType = {
   title: string
   callBack?: () => void
   disableBtn?: boolean
+  minValue?: number
+  maxValue?: number
 }
 
 export const Button = (props: ButtonPropsType) => {
